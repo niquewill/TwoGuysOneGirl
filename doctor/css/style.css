@@ -44,6 +44,7 @@ h2 {
     margin: auto;
 }
 .top-header img.logo {
+    height: 150px;
     margin-bottom: 25px;
     margin-top: -15px;
     transition: all .5s ease 0s;
@@ -362,20 +363,26 @@ li a.active {
     color: #fff;
     padding-bottom: 90px;
 }
-.service-img img.heart {
-    left: 20%;
-    top: 18%;
+/*.service-img img.heart {
+    font-size: 120px;
+    color: rgb(255, 255, 255);
 }
 .service-img img.brain {
-    left: 26%;
-    top: 11%;
+    font-size: 120px;
+    color: rgb(255, 255, 255);
 }
 .service-img img.knee {
-    left: 38%;
+    font-size: 120px;
+    color: rgb(255, 255, 255);
 }
 .service-img img.bone {
-    left: 25%;
-    top: 14%;
+    font-size: 120px;
+    color: rgb(255, 255, 255);*/
+/*}*/
+
+.number {
+    font-size: 120px;
+    color: rgb(255, 255, 255);   
 }
 .service-img img {
     position: absolute;
