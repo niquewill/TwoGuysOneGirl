@@ -13,7 +13,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'BenchNine', sans-serif;
+    font-family: "Roboto", arial, sans-serif;
 }
 li {
     list-style: none;
@@ -45,7 +45,7 @@ h2 {
 }
 .top-header img.logo {
     height: 150px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     margin-top: -15px;
     transition: all .5s ease 0s;
     -webkit-transition: all .5s ease 0s;
@@ -484,7 +484,8 @@ li a.active {
 }
 .contact-heading h2 {
     color: #fff;
-    font-size: 90px;
+    font-size: 45px;
+    padding: 0px 12%;
 }
 .contact-info {
     padding-left: 40px;
