@@ -30,6 +30,7 @@ var config = {
   var availability;
   var gender ;
   var specialties = "";
+  var rating ;
   var picture = $('<img>');
 
   //====================================================================
@@ -56,6 +57,7 @@ var config = {
   license = $("#license-input").val();
   availability = $("#availability-input").val();
   picture = $("#picture-input").val();
+  rating = $("#rating-input").val();
  
   // 5. Code for the push
   database.ref().push({
@@ -72,8 +74,8 @@ var config = {
     gender: gender,
     license: license,
     availability: availability,
-    picture: picture
-    
+    picture: picture,
+    rating: rating
   });
   // 6. Don't refresh the page!
   return false;
@@ -98,10 +100,8 @@ console.log(childSnapshot.val().license);
 console.log(childSnapshot.val().availability);
 console.log(childSnapshot.val().picture);
 
-
-
 // full list of items to the well
-$("#nurses-table > tbody").append("<tr><td>" + name + "<td><td>" + license + "<td><td>" + availability + "<td><td>" + specialties + "<td><td>" + pay + "<td><td>" + picture +  "</td></tr>");
+$("#nurses-table > tbody").append("<tr><td>" + name + "<td><td>" + license + "<td><td>" + rating + "<td><td>" + availability + "<td><td>" + specialties + "<td><td>" + pay + "<td><td>" + picture +  "</td></tr>");
 
 // Handle the errors
 }, function(errorObject) {
