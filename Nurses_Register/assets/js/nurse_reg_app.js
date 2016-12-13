@@ -26,27 +26,37 @@ var config = {
   var pay = 0;
   var text = "";
   var comment = "";
+  var license;
+  var availability;
+  var gender ;
+  var specialties = "";
+  var picture = $('<img>');
 
   //====================================================================
-
-  $('input[type="radio"]').bind('click',function() {
-    $('input[type="radio"]').not(this).prop("checked", false);
-  });
-
   // 3. Capture Button Click login-button
   $("#add-nurse").on("click", function() {
-  
-  // 4. Code in the logic for storing and retrieving the most recent user.
-  name = $("#name-input").val().trim();
-  email = $("#email-input").val().trim();
-  username = $("#username-input").val().trim();
-  password = $("#password-input").val().trim();
-  confirm = $("#confirm-input").val().trim();
-  distance = $("#distance-input").val().trim();
-  pay = $("#pay-input").val().trim();
-  address = $("#autocomplete").val().trim();
-  comment = $("#comment-input").val().trim();
 
+    $('.main-login main-center input-radio').click(function () {
+    $(this).parents('.radioCheck li input').children('li').removeClass("selected");
+    $(this).parents('li').addClass('selected'); 
+  });
+
+  // 4. Code in the logic for storing and retrieving the most recent user.
+  name = $("#name-input").val();
+  email = $("#email-input").val();
+  username = $("#username-input").val();
+  password = $("#password-input").val();
+  confirm = $("#confirm-input").val();
+  specialties = $("#speciality-input").val();
+  distance = $("#distance-input").val();
+  pay = $("#pay-input").val();
+  address = $("#autocomplete").val();
+  profile = $("#comment-input").val();
+  gender = $("#gender-input").val();
+  license = $("#license-input").val();
+  availability = $("#availability-input").val();
+  picture = $("#picture-input").val();
+ 
   // 5. Code for the push
   database.ref().push({
     name: name,
@@ -54,10 +64,16 @@ var config = {
     username: username,
     password: password,
     confirm: confirm,
+    Specialties: specialties,
     distance: distance,
     pay: pay,
     address: address,
-    comment: comment
+    profile: profile,
+    gender: gender,
+    license: license,
+    availability: availability,
+    picture: picture
+    
   });
   // 6. Don't refresh the page!
   return false;
@@ -72,9 +88,20 @@ console.log(childSnapshot.val().email);
 console.log(childSnapshot.val().username);
 console.log(childSnapshot.val().password);
 console.log(childSnapshot.val().confirm);
-onsole.log(childSnapshot.val().distance);
+console.log(childSnapshot.val().Specialties);
+console.log(childSnapshot.val().distance);
 console.log(childSnapshot.val().pay);
-console.log(childSnapshot.val().comment);
+console.log(childSnapshot.val().address);
+console.log(childSnapshot.val().profile);
+console.log(childSnapshot.val().gender);
+console.log(childSnapshot.val().license);
+console.log(childSnapshot.val().availability);
+console.log(childSnapshot.val().picture);
+
+
+
+// full list of items to the well
+$("#nurses-table > tbody").append("<tr><td>" + name + "<td><td>" + license + "<td><td>" + availability + "<td><td>" + specialties + "<td><td>" + pay + "<td><td>" + picture +  "</td></tr>");
 
 // Handle the errors
 }, function(errorObject) {
