@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Nurses Registration Form</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- RATING CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <!-- Website CSS style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/address_style.css">
+
+    <!-- Website Font style -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <!-- RATING LINKS -->
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="assets/css/scratch_bower_boostrap.css">
+    <!-- Font Awesome CSS -->
+    <link href="assets/css/scratch_fontawesome.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="assets/css/scratch_bootstrap.css" rel="stylesheet">
+
+    <link href="assets/css/scratch_main_boostrap.css" rel="stylesheet">
+
+    <link href="assets/css/scratch_gly.css" rel="stylesheet">
+    <link href="assets/css/scratch_gly.css" rel="stylesheet">
+  
+    <!--Angus Comment: Include firebase link  
+        //======================================================================================================== -->
+        <!-- LINK TO FIREBASE GOES HERE -->
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+    <!--Angus Comment: Include Jquery link //======================================================================================================== -->
+        <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+
+    <!-- STYLE INCLUDED FOR AUTO ADDRESS COMPLETION FORM-->
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 10px;
+        padding: 5px;
+      }
+    </style>
+
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    
+    <style>
+      #locationField, #controls {
+        position: relative;
+        width: 480px;
+      }
+      #autocomplete {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 99%;
+      }
+      .label {
+        text-align: right;
+        font-weight: bold;
+        width: 100px;
+        color: #303030;
+      }
+      #address {
+        border: 1px solid #000090;
+        background-color: #f0f0ff;
+        width: 480px;
+        padding-right: 2px;
+      }
+      #address td {
+        font-size: 10pt;
+      }
+      .field {
+        width: 99%;
+      }
+      .slimField {
+        width: 80px;
+      }
+      .wideField {
+        width: 200px;
+      }
+      #locationField {
+        height: 20px;
+        margin-bottom: 2px;
+      }
+    </style>
+
+    <!-- RATING STYLE --> 
+    <style>
+      .custom-heart {
+        font-size: 2.5em;
+        color: red;
+      }
+    </style>
+
+    <!-- STYLE ENDED -->
+  
+  </head>
+
+  <body>
+    <!-- TITLE THIS PAGE -->
+    <div class="container-fluid">
+    <br>
+      <!-- Jumbotron -->
+      <div class="jumbotron" style="background-color: black; color: white">
+        <h1 class="text-center">Register Now!</h1>
+      </div>
+        <div class="row main">
+          <div class="panel-heading">
+            <div class="panel-title text-center">
+              <h1 class="title">New Nurses Sign-Up</h1>
+            </div> 
+          </div>
+          <div class="main-login main-center">
+            <form class="form-horizontal" method="post" action="#">
+              <div class="form-group">
+                <label for="name" class="cols-sm-2 control-label">Your Name</label>
+                  <div class="cols-sm-10">
+                     <div class="input-group">
+                       <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                       <input type="text" class="form-control" name="name" id="name-input"  placeholder="Enter your Name"/>
+                     </div>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                 <label for="email" class="cols-sm-2 control-label">Your Email</label>
+                   <div class="cols-sm-10">
+                      <div class="input-group">
+                         <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                         <input type="text" class="form-control" name="email" id="email-input"  placeholder="Enter your Email"/>
+                      </div>
+                   </div>
+              </div>
+
+              <div class="form-group">
+                 <label for="username" class="cols-sm-2 control-label">Username</label>
+                   <div class="cols-sm-10">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="username" id="username-input"  placeholder="Enter your Username"/>
+                      </div>
+                   </div>
+              </div>
+
+              <div class="form-group">
+                 <label for="password" class="cols-sm-2 control-label">Password</label>
+                  <div class="cols-sm-10">
+                     <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                        <input type="password" class="form-control" name="password" id="password-input"  placeholder="Enter your Password"/>
+                     </div>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                 <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+                   <div class="cols-sm-10">
+                      <div class="input-group">
+                         <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                         <input type="password" class="form-control" name="confirm" id="confirm-input"  placeholder="Confirm your Password"/>
+                      </div>
+                   </div>
+              </div>
+
+              <div class="form-group">
+                 <label for="Specialties" class="cols-sm-2 control-label">Specialties</label>
+                   <div class="cols-sm-10">
+                      <div class="input-group">
+                         <span class="input-group-addon"><i class="fa fa-star fa-lg" aria-hidden="true"></i></span>
+                         <input type="Specialties" class="form-control" name="Specialities" id="speciality-input"  placeholder="Enter your area of specialization"/>
+                      </div>
+                   </div>
+              </div>
+
+
+              <div class="form-group">
+                 <label for="distance" class="cols-sm-2 control-label">Distance willing to travel</label>
+                   <div class="cols-sm-10">
+                      <div class="input-group">
+                         <span class="input-group-addon"><i class="fa fa-car fa-lg" aria-hidden="true"></i></span>
+                         <input type="distance" class="form-control" name="distance" id="distance-input"  placeholder="Enter distance willing to travel"/>
+                      </div>
+                   </div>
+              </div>
+
+              <div class="form-group">
+                 <label for="salary" class="cols-sm-2 control-label">Nurses' Pay</label>
+                   <div class="cols-sm-10">
+                      <div class="input-group">
+                         <span class="input-group-addon"><i class="fa fa-dollar fa-lg" aria-hidden="true"></i></span>
+                         <input type="salary" class="form-control" name="pay" id="pay-input"  placeholder="Enter how much you charge for your services"/>
+                      </div>
+                   </div>
+              </div>
+
+
+              <div id="locationField">
+                 <input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text"></input>
+              </div>
+              <table id="address">
+                <tr>
+                  <td class="label">Street address</td>
+                  <td class="slimField"><input class="field" id="street_number" disabled="true"></input></td>
+                  <td class="wideField" colspan="2"><input class="field" id="route" disabled="true"></input></td>
+                </tr>
+                <tr>
+                  <td class="label">City</td>
+                  <!-- Note: Selection of address components in this example is typical.
+                  You may need to adjust it for the locations relevant to your app. See
+                  https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
+                  -->
+                  <td class="wideField" colspan="3"><input class="field" id="locality" disabled="true"></input></td>
+                  </tr>
+                  <tr>
+                     <td class="label">State</td>
+                     <td class="slimField"><input class="field" id="administrative_area_level_1" disabled="true"></input></td>
+                     <td class="label">Zip code</td>
+                     <td class="wideField"><input class="field" id="postal_code" disabled="true"></input></td>
+                  </tr>
+                  <tr>
+                     <td class="label">Country</td>
+                     <td class="wideField" colspan="3"><input class="field" id="country" disabled="true"></input></td>
+                  </tr>
+              </table>
+              <hr>
+              <div class="form-group">
+                 <label for="comment-input">Your Profile</label>
+                 <textarea class="form-control" name="profile" id="comment-input" rows="5"></textarea>
+              </div>
+
+            <div class= "row">
+             <div class= "col-xs-4">
+              <div class="form-group">
+              <!-- UL with options -->
+                <!--unordered list containing the possible answers to the question --> 
+                  <ul class="radioCheck">
+                      <form action="">
+                         <label for="gender-input">Gender</label>
+                         <br>
+                         <label><input type="radio" name="gender" id="gender-input" value="male"> Male<br></label>
+                         <label><input type="radio" name="gender" id="gender-input" value="female"> Female<br></label> 
+                      </form>
+                  </ul>
+              </div>
+             </div>
+             <div class= "col-xs-4">
+              <div class="form-group">
+              <!-- UL with options -->
+                <!--unordered list containing the possible answers to the question --> 
+                  <ul class="radioCheck">
+                      <form action="">
+                         <label for="license-input">License</label>
+                         <br>
+                         <label><input type="radio" name="license" id="license-input" value="LVN"> LVN<br></label>
+                         <label><input type="radio" name="license" id="license-input" value="RN"> RN<br></label>
+                         <label><input type="rad  io" name="license" id="license-input" value="APRN"> APRN<br></label> 
+                      </form>
+                  </ul>
+              </div>
+             </div>
+
+            <div class= "col-xs-4">
+              <div class="form-group">
+              <!-- UL with options -->
+                <!--unordered list containing the possible answers to the question --> 
+                  <ul class="availability">
+                      <form action="">
+                         <label for="availability-input">Availability</label>
+                         <br>
+                         <label><input type="radio" name="availability" id="availability-input" value="available"> Available<br></label>
+                         <label><input type="radio" name="availability" id="availability-input" value="not-available"> Not-Available<br></label>
+                  </ul>
+              </div>
+             </div>
+            </div>
+
+            <hr>
+                <div id="pictures">
+                   <span class="input-group-addon"><i class="fa fa-photo fa-lg" aria-hidden="true"></i></span>
+                   <input type="url" class="form-control" name="picture" id="picture-input"  placeholder="Enter URL of your picture"/>
+                </div> 
+            <hr>
+
+               <div class="survey-builder container">
+                  <input type="hidden" id="rating-input" class="rating glyphicon-star-empty" data-fractions="2"></input>
+              </div>  
+              <button class="btn btn-primary" id="add-nurse" type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+
+        <!--Create the Html for a five star rating widget using Html radio buttons -->
+        <div id="stars-input">
+          <form action="">
+             <input class="star star-5" id="star-5" type="radio" name="star"/>
+               <label class="star star-5" for="star-5"></label>
+                 <input class="star star-4" id="star-4" type="radio" name="star"/>
+                    <label class="star star-4" for="star-4"></label>
+                       <input class="star star-3" id="star-3" type="radio" name="star"/>
+                          <label class="star star-3" for="star-3"></label>
+                            <input class="star star-2" id="star-2" type="radio" name="star"/>
+                               <label class="star star-2" for="star-2"></label>
+                                 <input class="star star-1" id="star-1" type="radio" name="star"/>
+                                    <label class="star star-1" for="star-1"></label>
+            </form>
+          </div>
+        <hr>
+        <!-- Wells for displaying all nurses -->
+        <div class="row">
+
+        <div class="col-lg-12">
+
+        <!-- Current Employees-->
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Nurses</strong></h3>
+            </div>
+            <div class="panel-body">
+              <table class="table table-hover" id='nurses-table'>
+                <thead>
+                  <tr>
+                    <th>Nurses Name</th>
+                    <th>License</th>
+                    <th>Rating</th>
+                    <th>Availability</th>
+                    <th>Specialties</th>
+                    <th>Charge ($)</th>
+                    <th>Picture</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!--- RATING HTML INCLUDED -->
+
+    </div>
+    <!-- RATING SCRIPTS LINK --> 
+    <script type="text/javascript" src="assets/js/scratch_bower_jquery.js"></script>
+    <script type="text/javascript" src="assets/js/scratch_bower_tooltip.js"></script>
+    <script type="text/javascript" src="assets/js/scratch_app.js"></script>
+ 
+    
+    <!-- AUTO COMPLETION JS SCRIPT -->
+    <script>
+      // This example displays an address form, using the autocomplete feature
+      // of the Google Places API to help users fill in the information.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      var placeSearch, autocomplete;
+      var componentForm = {
+        street_number: 'short_name',
+        route: 'long_name',
+        locality: 'long_name',
+        administrative_area_level_1: 'short_name',
+        country: 'long_name',
+        postal_code: 'short_name'
+      };
+
+      function initAutocomplete() {
+        // Create the autocomplete object, restricting the search to geographical
+        // location types.
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+            {types: ['geocode']});
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete.addListener('place_changed', fillInAddress);
+      }
+
+      function fillInAddress() {
+        // Get the place details from the autocomplete object.
+        var place = autocomplete.getPlace();
+
+        for (var component in componentForm) {
+          document.getElementById(component).value = '';
+          document.getElementById(component).disabled = false;
+        }
+
+        // Get each component of the address from the place details
+        // and fill the corresponding field on the form.
+        for (var i = 0; i < place.address_components.length; i++) {
+          var addressType = place.address_components[i].types[0];
+          if (componentForm[addressType]) {
+            var val = place.address_components[i][componentForm[addressType]];
+            document.getElementById(addressType).value = val;
+          }
+        }
+      }
+
+      // Bias the autocomplete object to the user's geographical location,
+      // as supplied by the browser's 'navigator.geolocation' object.
+      function geolocate() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var geolocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var circle = new google.maps.Circle({
+              center: geolocation,
+              radius: position.coords.accuracy
+            });
+            autocomplete.setBounds(circle.getBounds());
+          });
+        }
+      }
+
+      //======================================================================
+      $(function () {
+        $('input.check').on('change', function () {
+          alert('Rating: ' + $(this).val());
+        });
+        $('#programmatically-set').click(function () {
+          $('#programmatically-rating').rating('rate', $('#programmatically-value').val());
+        });
+        $('#programmatically-get').click(function () {
+          alert($('#programmatically-rating').rating('rate'));
+        });
+        $('#programmatically-reset').click(function () {
+          $('#programmatically-rating').rating('rate', '');
+        });
+        $('.rating-tooltip').rating({
+          extendSymbol: function (rate) {
+            $(this).tooltip({
+              container: 'body',
+              placement: 'bottom',
+              title: 'Rate ' + rate
+            });
+          }
+        });
+        $('.rating-tooltip-manual').rating({
+          extendSymbol: function () {
+            var title;
+            $(this).tooltip({
+              container: 'body',
+              placement: 'bottom',
+              trigger: 'manual',
+              title: function () {
+                return title;
+              }
+            });
+            $(this).on('rating.rateenter', function (e, rate) {
+              title = rate;
+              $(this).tooltip('show');
+            })
+            .on('rating.rateleave', function () {
+              $(this).tooltip('hide');
+            });
+          }
+        });
+        $('.rating').each(function () {
+          $('<span class="label label-default"></span>')
+            .text($(this).val() || ' ')
+            .insertAfter(this);
+        });
+        $('.rating').on('change', function () {
+          $(this).next('.label').text($(this).val());
+        });
+      });
+
+      //=============================================================================
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBplrQwIrMCLwjxzLP4TapghkjsP5mzKRY&libraries=places&callback=initAutocomplete"
+        async defer></script>
+      <!-- Javascript -->
+    <script src="assets/js/nurse_reg_app.js"></script>
+  
+  </body>
+</html>

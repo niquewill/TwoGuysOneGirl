@@ -1,0 +1,90 @@
+<doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap rating</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="assets/css/scratch_bower_bootstrap.css">
+    <!-- Font Awesome CSS -->
+    <link href="assets/css/scratch_fontawesome.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="assets/css/scratch_bootstrap.css" rel="stylesheet">
+
+    <link href="assets/css/scratch_main_bootstrap.css" rel="stylesheet">
+
+    <link href="assets/css/scratch_gly.css" rel="stylesheet">
+    <link href="assets/css/scratch_gly.css" rel="stylesheet">
+    <style>
+      .custom-heart {
+        font-size: 2.5em;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="survey-builder container">
+      <h3>Half rating</h3>
+      <input type="hidden" class="rating glyphicon-star-empty" data-fractions="2"/>   
+    </div>
+    <script type="text/javascript" src="assets/js/scratch_bower_jquery.js"></script>
+    <script type="text/javascript" src="assets/js/scratch_bower_tooltip.js"></script>
+    <script type="text/javascript" src="assets/js/scratch_app.js"></script>
+    <script>
+      $(function () {
+        $('input.check').on('change', function () {
+          alert('Rating: ' + $(this).val());
+        });
+        $('#programmatically-set').click(function () {
+          $('#programmatically-rating').rating('rate', $('#programmatically-value').val());
+        });
+        $('#programmatically-get').click(function () {
+          alert($('#programmatically-rating').rating('rate'));
+        });
+        $('#programmatically-reset').click(function () {
+          $('#programmatically-rating').rating('rate', '');
+        });
+        $('.rating-tooltip').rating({
+          extendSymbol: function (rate) {
+            $(this).tooltip({
+              container: 'body',
+              placement: 'bottom',
+              title: 'Rate ' + rate
+            });
+          }
+        });
+        $('.rating-tooltip-manual').rating({
+          extendSymbol: function () {
+            var title;
+            $(this).tooltip({
+              container: 'body',
+              placement: 'bottom',
+              trigger: 'manual',
+              title: function () {
+                return title;
+              }
+            });
+            $(this).on('rating.rateenter', function (e, rate) {
+              title = rate;
+              $(this).tooltip('show');
+            })
+            .on('rating.rateleave', function () {
+              $(this).tooltip('hide');
+            });
+          }
+        });
+        $('.rating').each(function () {
+          $('<span class="label label-default"></span>')
+            .text($(this).val() || ' ')
+            .insertAfter(this);
+        });
+        $('.rating').on('change', function () {
+          $(this).next('.label').text($(this).val());
+        });
+      });
+    </script>
+  </body>
+</html>
