@@ -30,7 +30,7 @@ var config = {
   var availability;
   var gender ;
   var specialties = "";
-  var rate ;
+  var star ;
   var picture = $('<img>');
 
   //====================================================================
@@ -57,7 +57,7 @@ var config = {
   license = $("#license-input").val();
   availability = $("#availability-input").val();
   picture = $("#picture-input").val();
-  rate = $("#rating-input").val();
+  star = $("#stars-input").val();
  
   // 5. Code for the push
   database.ref().push({
@@ -69,6 +69,7 @@ var config = {
     specialties: specialties,
     distance: distance,
     pay: pay,
+    star:star,
     address: address,
     profile: profile,
     gender: gender,
@@ -99,6 +100,7 @@ console.log(childSnapshot.val().gender);
 console.log(childSnapshot.val().license);
 console.log(childSnapshot.val().availability);
 console.log(childSnapshot.val().picture);
+console.log(childSnapshot.val().star);
 
 // Store everything into a variable.
 var name = childSnapshot.val().name;
@@ -108,9 +110,10 @@ var available = childSnapshot.val().password;
 var specialties = childSnapshot.val().specialties;
 var pay = childSnapshot.val().pay;
 var picture = childSnapshot.val().picture;
+var star = childSnapshot.val().star;
 
 // full list of items to the well
-$("#nurses-table > tbody").append("<tr></td>" + "<td>" + name + "</td>" + "<td>" + license + "</td>" + "<td>" + rate + "</td>" + "<td>" + availability + "</td>" + "<td>" + specialties + "</td>" + "<td>" + pay + "</td>" + '<td><img src="' + picture + '"></td>'  +  "</td></tr>");
+$("#nurses-table > tbody").append("<tr></td>" + "<td>" + name + "</td>" + "<td>" + license + "</td>" + "<td>" + star + "</td>" + "<td>" + availability + "</td>" + "<td>" + specialties + "</td>" + "<td>" + pay + "</td>" + '<td><img src="' + picture + '"></td>'  +  "</td></tr>");
 
 // Handle the errors
 }, function(errorObject) {
