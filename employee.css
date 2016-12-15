@@ -1,0 +1,35 @@
+body
+{
+    
+    font-family:JF Flat;
+    color:#5687C4;
+}
+.img
+{
+    width:80px;
+    height:75px;
+}
+.input-group input[type="email"]
+{
+    font-weight:bolder;
+    color:#5687C4;
+    background-color:#DBE3ED;
+    width:420px;
+}
+.input-group input[type="password"]
+{
+    font-weight:bolder;
+    color:#5687C4;
+    background-color:#DBE3ED;
+    width:300px;
+}
+div >label
+{
+    font-size:14pt;
+    color:#5687C4;
+}
+label#remember
+{
+    font-size:12pt;
+    padding-left:35px;
+}

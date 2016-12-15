@@ -1,0 +1,62 @@
+navbar navbar-inverse{
+    background-color: darkgreen;
+}
+#myCarousel .nav {
+    display: block;
+}
+
+#myCarousel .nav{
+    background: #eee;
+}
+.nav-justified > li > a{
+    border-radius: 0px;
+}
+
+.nav-pills>li[data-slide-to="0"].active 
+
+a { background-color: #0D68C2; 
+
+}
+.nav-pills>li[data-slide-to="1"].active 
+
+a { 
+    background-color: #e67e22;
+}
+.nav-pills>li[data-slide-to="2"].active 
+
+a { 
+    background-color: #2980b9; 
+}
+.nav-pills>li[data-slide-to="3"].active 
+
+a { 
+    background-color: #8e44ad; 
+}
+
+/*Jumbotron*/
+
+.jumbotron{
+    margin-bottom:20px;
+    margin-top:20px;
+    position:center;
+   
+}
+
+.pricing {
+    text-align: center;
+    }
+
+/*Page Header*/
+.page-header{
+    text-align:center;
+}
+footer {
+    height: 45px;
+    bottom: 0;
+/*    padding: 10px;*/
+    background-color: #0D68C2; 
+/*    position: fixed;*/
+    width: 100%;
+    border:1px solid #0d68c2;
+    float: left;
+}
