@@ -258,6 +258,7 @@
                          <br>
                          <label><input type="radio" name="gender" id="gender-input" value="male"> Male<br></label>
                          <label><input type="radio" name="gender" id="gender-input" value="female"> Female<br></label> 
+                      </form>
                   </ul>
               </div>
              </div>
@@ -272,6 +273,7 @@
                          <label><input type="radio" name="license" id="license-input" value="LVN"> LVN<br></label>
                          <label><input type="radio" name="license" id="license-input" value="RN"> RN<br></label>
                          <label><input type="radio" name="license" id="license-input" value="APRN"> APRN<br></label> 
+                      </form>
                   </ul>
               </div>
              </div>
@@ -293,15 +295,14 @@
 
             <hr>
                 <div id="pictures">
-                <span class="input-group-addon"><i class="fa fa-photo fa-lg" aria-hidden="true"></i></span>
-                <input type="url" class="form-control" name="picture" id="picture-input"  placeholder="Enter URL of your picture"/>
+                   <span class="input-group-addon"><i class="fa fa-photo fa-lg" aria-hidden="true"></i></span>
+                   <input type="url" class="form-control" name="picture" id="picture-input"  placeholder="Enter URL of your picture"/>
                 </div> 
             <hr>
 
                <div class="survey-builder container">
-                  <input type="hidden" class="rating glyphicon-star-empty" data-fractions="2"/>   
-               </div>
-
+                  <input type="hidden" id="rating-input" class="rating glyphicon-star-empty" data-fractions="2"></input>
+              </div>  
               <button class="btn btn-primary" id="add-nurse" type="submit">Submit</button>
             </form>
           </div>
@@ -325,7 +326,6 @@
                     <th>Nurses Name</th>
                     <th>License</th>
                     <th>Rating</th>
-                   
                     <th>Availability</th>
                     <th>Specialties</th>
                     <th>Charge ($)</th>

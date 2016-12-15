@@ -30,7 +30,7 @@ var config = {
   var availability;
   var gender ;
   var specialties = "";
-  var rating ;
+  var rate ;
   var picture = $('<img>');
 
   //====================================================================
@@ -57,7 +57,7 @@ var config = {
   license = $("#license-input").val();
   availability = $("#availability-input").val();
   picture = $("#picture-input").val();
-  rating = $("#rating-input").val();
+  rate = $("#rating-input").val();
  
   // 5. Code for the push
   database.ref().push({
@@ -66,7 +66,7 @@ var config = {
     username: username,
     password: password,
     confirm: confirm,
-    Specialties: specialties,
+    specialties: specialties,
     distance: distance,
     pay: pay,
     address: address,
@@ -75,7 +75,7 @@ var config = {
     license: license,
     availability: availability,
     picture: picture,
-    rating: rating
+    //rating: rating
   });
   // 6. Don't refresh the page!
   return false;
@@ -90,7 +90,7 @@ console.log(childSnapshot.val().email);
 console.log(childSnapshot.val().username);
 console.log(childSnapshot.val().password);
 console.log(childSnapshot.val().confirm);
-console.log(childSnapshot.val().Specialties);
+console.log(childSnapshot.val().specialties);
 console.log(childSnapshot.val().distance);
 console.log(childSnapshot.val().pay);
 console.log(childSnapshot.val().address);
@@ -100,8 +100,17 @@ console.log(childSnapshot.val().license);
 console.log(childSnapshot.val().availability);
 console.log(childSnapshot.val().picture);
 
+// Store everything into a variable.
+var name = childSnapshot.val().name;
+var license = childSnapshot.val().license;
+var rate = childSnapshot.val().rate;
+var available = childSnapshot.val().password;
+var specialties = childSnapshot.val().specialties;
+var pay = childSnapshot.val().pay;
+var picture = childSnapshot.val().picture;
+
 // full list of items to the well
-$("#nurses-table > tbody").append("<tr><td>" + name + "<td><td>" + license + "<td><td>" + rating + "<td><td>" + availability + "<td><td>" + specialties + "<td><td>" + pay + "<td><td>" + picture +  "</td></tr>");
+$("#nurses-table > tbody").append("<tr></td>" + "<td>" + name + "</td>" + "<td>" + license + "</td>" + "<td>" + rate + "</td>" + "<td>" + availability + "</td>" + "<td>" + specialties + "</td>" + "<td>" + pay + "</td>" + '<td><img src="' + picture + '"></td>'  +  "</td></tr>");
 
 // Handle the errors
 }, function(errorObject) {
