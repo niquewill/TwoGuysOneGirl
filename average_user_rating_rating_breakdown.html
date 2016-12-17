@@ -28,6 +28,10 @@ body {
 	padding-bottom:7px;
 }
 
+.logo {
+	width: 100%;
+
+}
 .review-block{
 	background-color:#FAFAFA;
 	border:1px solid #EFEFEF;
@@ -54,6 +58,15 @@ body {
 .review-block-description{
 	font-size:13px;
 }
+
+#ratingText {
+	margin-top: 7%;
+}
+
+hr {
+	color: #5777b2;
+}
+
     </style>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -119,13 +132,16 @@ body {
 
 <div class="wide">
   	<div class="col-xs-5 line"><hr></div>
-    <div class="col-xs-2 logo">Logo</div>
+    <div class="col-xs-2 logo">
+    	<img class="logo" src="assets/images/lifelinklogo.jpg"></img>
+    </div>
     <div class="col-xs-5 line"><hr></div>
 </div>
-
-<div class="container">
+<br>
+<div class="container" id="ratingText">
   <div class="text-center">
-    <h1>We value your opinion. Please provide an honest rating on your experience with this nurse.</h1>
+    <h1>We value your opinion.</h1>
+    <h1>Please provide an honest rating on your experience with this nurse.</h1>
   </div>
 </div><!-- /.container -->
 
