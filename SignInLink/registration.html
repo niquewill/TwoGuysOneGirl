@@ -29,16 +29,23 @@
 	</head>
 	<body>
 		<div class="container">
+		 <div class="row">
+		 	<div class="col-md-2 col-sm-2">
+		 	    <img class="img-circle" id="img_logo" src="assets/images/lifelinelogo.jpg" style="width:180px">
+		 	</div>
+		 </div>
+
+		 <div class="row">
+		  <div class="col-md-6 col-sm-6">
 			<div class="row main">
 				<div class="panel-heading">
 	               <div class="panel-title text-center">
-	               		<h1 class="title">Company Name</h1>
-	               		<hr />
+	               		<h1 class="title jumbotron" style="background-color:#0099cc;font-size: 20px; color: white">Patients/Health Care Administrators Register Here</h1>
+	               		<hr/>
 	               	</div>
 	            </div> 
 				<div class="main-login main-center">
 					<form class="form-horizontal" method="post" action="#">
-						
 						<div class="form-group">
 							<label for="name" class="cols-sm-2 control-label">Your Name</label>
 							<div class="cols-sm-10">
@@ -68,7 +75,6 @@
 								</div>
 							</div>
 						</div>
-
 						<div class="form-group">
 							<label for="password" class="cols-sm-2 control-label">Password</label>
 							<div class="cols-sm-10">
@@ -78,7 +84,6 @@
 								</div>
 							</div>
 						</div>
-
 						<div class="form-group">
 							<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
 							<div class="cols-sm-10">
@@ -88,17 +93,26 @@
 								</div>
 							</div>
 						</div>
-
-						<div class="form-group ">
-							<button type="button" class="btn btn-primary btn-lg btn-block login-button"><a href="../nurseData.html">Sign In</a></button>
-						</div>
-						<div class="login-register">
-				            <a href="nurses_register_1.html">Register</a>
+						 <div class="login-register">
+						    <a href="Reg_welcome_page_Link.html" class="button btn btn-primary btn-lg btn-block">Register</a>
 				         </div>
 					</form>
 				</div>
 			</div>
+		 </div>
+	
+		 <div class="col-md-6 col-sm-6">
+		   <div class="panel-title text-center">
+		   	  <br>
+	           <h2 class="title text-center" style="background-color:#0099cc;font-size: 20px; color: white">Already Registered</h2>
+	             <hr/>
+	               <div class="login-signIN">
+					  <a href="signIn_Link.html" class="button btn btn-primary btn-lg btn-block">SignIn</a>
+				    </div>
+           </div>
+		 </div>
 		</div>
+	   </div>
 
 		<script type="text/javascript" src="assets/js/bootstrap.js"></script>
 
@@ -106,5 +120,6 @@
 		//======================================================================== -->
 		<!-- Javascript -->
         <script src="assets/js/registration-logic.js"></script>
+       
 	</body>
 </html>
