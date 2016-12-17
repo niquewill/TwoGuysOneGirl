@@ -6,7 +6,7 @@ function MedicareDataSource() {
   $.extend(this, new storeLocator.StaticDataFeed);
 
   var that = this;
-  $.get('assets/csv/nursesData.csv', function(data) {
+  $.get('NurseData.csv', function(data) {
     that.setStores(that.parse_(data));
   });
 }
