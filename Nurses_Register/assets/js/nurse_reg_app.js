@@ -114,7 +114,7 @@ var star = childSnapshot.val().star;
 
 // full list of items to the well
 
-$("#nurses-table > tbody").append("<tr></td>" + "<td>" + name + "</td>" + "<td>" + license + "</td>" + "<td>" + star + "</td>" + "<td>" + availability + "</td>" + "<td>" + specialties + "</td>" + "<td>" + pay + "</td>" + '<td><img src="' + picture + '"></td>'  +  "</td></tr>");
+//$("#nurses-table > tbody").append("<tr></td>" + "<td>" + name + "</td>" + "<td>" + license + "</td>" + "<td>" + star + "</td>" + "<td>" + availability + "</td>" + "<td>" + specialties + "</td>" + "<td>" + pay + "</td>" + '<td><img src="' + picture + '"></td>'  +  "</td></tr>");
 
 // Handle the errors
 }, function(errorObject) {
