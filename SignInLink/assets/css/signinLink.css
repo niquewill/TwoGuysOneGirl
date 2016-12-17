@@ -18,6 +18,10 @@
     width: 350px;
 }
 
+#mainBackground {
+        background-size: cover;
+}
+
 #login-modal input[type=text], input[type=password] {
     margin-top: 10px;
 }
