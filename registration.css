@@ -6,13 +6,16 @@
  * General styles
  */
 
-body, html{
+body, html, container{
      height: 100%;
  	background-repeat: no-repeat;
- 	background-color: #d3d3d3;
- 	font-family: 'Oxygen', sans-serif;
+ 	background-image: url(assets/images/IMG_109409.png);
+ 	font-family: 'Roboto', arial, sans-serif;
 }
 
+container {
+    background-image: url(assets/images/IMG_109409.png);
+}
 .main{
  	margin-top: 70px;
 }
