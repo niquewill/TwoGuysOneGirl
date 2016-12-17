@@ -5,13 +5,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-	<title>DOCTOR - Responsive HTML &amp; Bootstrap Template</title>
+	<title>Nurses - Responsive HTML &amp; Bootstrap Template</title>
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,800,700,300' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=BenchNine:300,400,700' rel='stylesheet' type='text/css'>
 	<script src="js/modernizr.js"></script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBplrQwIrMCLwjxzLP4TapghkjsP5mzKRY&libraries=places"></script>
 	<!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
@@ -50,7 +52,7 @@
 					        <li><a class="menu active" href="#home" >Home</a></li>
 					        <li><a class="menu" href="#about">about us</a></li>
 					        <li><a class="menu" href="#service">how it works </a></li>
-					        <li><a class="menu" href="#team">example</a></li>
+					        <li><a class="menu" href="#team">profile</a></li>
 					        <li><a class="menu" href="#contact">free consult</a></li>
 					      </ul>
 					    </div><!-- /navbar-collapse -->
@@ -220,50 +222,52 @@
 		<div class="container">
 			<div class="row">
 				<div class="team-heading text-center">
-					<h2>Example of our nurses and doctors</h2>
-					<h4>Below is an example of what a nursing or concierge physician search looks like. Check it out.</h4>
+					<h2>Profile of our nurses</h2>
+					<h4>Below is the profile of featured nurses. Check it out.</h4>
 				</div>
-				<div class="col-md-2 single-member col-sm-4">
+				<div class="col-md-4 single-member col-sm-4">
 					<div class="person">
-						<img class="img-responsive" src="img/member1.jpg" alt="member-1">
+						<img class="img-responsive" style="height:250px" src="https://files.slack.com/files-pri/T2E15A9E3-F3FMZ566T/student-profile-helen-jervis.jpg" alt="member-1">
 					</div>
 					<div class="person-detail">
 						<div class="arrow-bottom"></div>
-						<h3>Dr. M. Weiner, M.D.</h3>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+						<h3> Mary McCain</h3>
+						<p>Enthusiastic, compassionate nursing professional with 11+ years of experience as a Registered Nurse. Possess incomparable knowledge of the nursing processes, professional standards of nursing and a track record of maintaining confidentiality and protecting sensitive data at all times. Dynamically capable of initiating discharge planning based on assessed needs specifically keeping in mind the organizational and department safety standards. Current Texas State Licensure as a Registered Nurse and BLS certificate. Devoted to provide utmost level of ease and care to patients</p>
 					</div>
 				</div>
-				<div class="col-md-2 single-member col-sm-4">
+				<div class="col-md-4 single-member col-sm-4">
 					<div class="person-detail">
 						<div class="arrow-top"></div>
-						<h3>Dr. Danielle, M.D.</h3>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+						<h3>Jenny Page</h3>
+						<p>Energetic, sensible individual working over the last 9 years as an Occupational Health Nurse. Diversely experienced in conducting clinical assessments. Substantial knowledge of coordinating occupational health programs and advising employees on prevention of illness and injury. Well versed in providing emergency treatment for injury and illness, communicating with management on occupational health issues along with proficiently handling health screening procedures. Assured exhibition of professionalism and integrity at all times. Active Certifications include: Audiometry, Blood-borne Pathogens Training Certificate and CPR (Cardio Pulmonary Resuscitation)</p>
 					</div>
 					<div class="person">
-						<img class="img-responsive" src="img/member2.jpg" alt="member-2">
+						<img style="height:250px" class="img-responsive" src="https://files.slack.com/files-tmb/T2E15A9E3-F3F1R1GSW-3470ab019c/anglade_2015_360.jpg" alt="member-2">
 					</div>
 				</div>
-				<div class="col-md-2 single-member col-sm-4">
+				<div class="col-md-4 single-member col-sm-4">
 					<div class="person">
-						<img class="img-responsive" src="img/member3.jpg" alt="member-3">
+						<img class="img-responsive" style="height:250px" src="https://files.slack.com/files-tmb/T2E15A9E3-F3EAD5STA-4c091ec7c9/team-3_360.jpg" alt="member-3">
 					</div>
 					<div class="person-detail">
 						<div class="arrow-bottom"></div>
-						<h3>Dr. Caitlin, M.D.</h3>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+						<h3>Martha Spaine</h3>
+						<p>A compassionate professional with 7+ years’ experience as a Plant Nurse. Specializes in conducting pre-employment, post-accident, and random drug screens. Proficient in supervising pre-placement physicals on all new hires along with recording all information on the medical health questionnaire. Adept at performing emergency first aid to all employees who require it and ordering first aid supplies for facility. A conscientious and resolute individual determined to accomplish quality performance that meets expectations of the position/company.</p>
 					</div>
+				  </div>
 				</div>
-				<div class="col-md-2 single-member col-sm-4">
-					<div class="person-detail">
+				<div class="row">
+				  <div class="col-md-4 single-member col-sm-4">
+				   <div class="person-detail">
 						<div class="arrow-top"></div>
-						<h3>Dr. Joseph, M.D.</h3>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+						<h3>Celine Harbor</h3>
+						<p>Highly-accomplished, achievement-driven healthcare expert having more than a decade of experience in the field of nursing as a Registered Nurse. Unsurpassed knowledge of symptoms and complications associated with surgery and anesthesia including initial treatment. Demonstrated ability to immediately identify medical and surgical complications by conducting ongoing surveillance. Thorough working knowledge of catheterization, ventilator care and pain management. Committed to enhance the quality of patient care through competent, skilled nursing diagnosis, promising patients a healthier and happy life</p>
 					</div>
 					<div class="person">
-						<img class="img-responsive" src="img/member4.jpg" alt="member-4">
+						<img class="img-responsive" style="height: 250px" src="https://files.slack.com/files-tmb/T2E15A9E3-F3F4AQKRT-2f232b4cd1/liverpoolc_360.jpg" alt="member-4">
 					</div>
 				</div>
-				<div class="col-md-2 single-member col-sm-4">
+				<div class="col-md-4 single-member col-sm-4">
 					<div class="person">
 						<img class="img-responsive" src="img/member5.jpg" alt="member-5">
 					</div>
@@ -273,7 +277,7 @@
 						<p>My name is Dr. Fransisco Gonzalez and I am a licensed physician that specializes in Geriatrics. I have ten years of experience and am willing to travel to all of Houston.</p>
 					</div>
 				</div>
-				<div class="col-md-2 single-member col-sm-4">
+				<div class="col-md-4 single-member col-sm-4">
 					<div class="person-detail">
 						<div class="arrow-top"></div>
 						<h3>Pediatric Nurse</h3>
@@ -282,6 +286,7 @@
 					<div class="person">
 						<img class="img-responsive" src="img/member6.jpg" alt="member-5">
 					</div>
+				  </div>
 				</div>
 			</div>
 		</div>
